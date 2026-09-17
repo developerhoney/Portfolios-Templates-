@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    (function () {
+      var t = localStorage.getItem('devhoney-theme');
+      var d = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      document.documentElement.setAttribute('data-theme', t || (d ? 'dark' : 'light'));
+    })();
+  </script>
+  <title>Savoria Culinary | DEVHONEY</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="app-body">
+
+  <div class="cursor-dot"></div>
+  <div class="cursor-glow"></div>
+
+  <header class="app-header">
+    <div class="header-brand">
+      <a href="index.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Portfolio</a>
+      <h1>Savoria Fine Dining</h1>
+    </div>
+    <span class="engine-tag">Digital Menu</span>
+  </header>
+
+  <main class="app-container">
+    <div class="hud-grid">
+      <div class="bento-card menu-card">
+        <div class="card-icon"><i class="fa-solid fa-bowl-food"></i></div>
+        <h3>Truffle Mushroom Risotto</h3>
+        <p>Arborio rice, fresh black truffle emulsion, shaved parmesan.</p>
+        <span class="subtitle">$28.00</span>
+      </div>
+
+      <div class="bento-card menu-card">
+        <div class="card-icon"><i class="fa-solid fa-drumstick-bite"></i></div>
+        <h3>Pan-Seared Duck Breast</h3>
+        <p>Served with spiced cherry reduction and parsnip purée.</p>
+        <span class="subtitle">$34.00</span>
+      </div>
+
+      <div class="bento-card menu-card">
+        <div class="card-icon"><i class="fa-solid fa-wine-glass"></i></div>
+        <h3>Vintage Pinot Noir</h3>
+        <p>2018 Reserve, rich notes of dark berries and subtle oak.</p>
+        <span class="subtitle">$18.00 / glass</span>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

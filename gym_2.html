@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    (function () {
+      var t = localStorage.getItem('devhoney-theme');
+      var d = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      document.documentElement.setAttribute('data-theme', t || (d ? 'dark' : 'light'));
+    })();
+  </script>
+  <title> Gym HUD | DEVHONEY</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="app-body">
+
+  <div class="cursor-dot"></div>
+  <div class="cursor-glow"></div>
+
+  <header class="app-header">
+    <div class="header-brand">
+      <a href="index.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Portfolio</a>
+      <h1>PulseGym HUD</h1>
+    </div>
+    <span class="engine-tag">#DevHoneyEngine</span>
+  </header>
+
+  <main class="app-container">
+    <!-- Day Tabs -->
+    <div class="tab-bar">
+      <button class="tab-btn" data-day="mon">Mon — Chest & Triceps</button>
+      <button class="tab-btn active" data-day="tue">Tue — Back & Biceps</button>
+      <button class="tab-btn" data-day="wed">Wed — Legs & Core</button>
+      <button class="tab-btn" data-day="thu">Thu — Active Recovery</button>
+    </div>
+
+    <!-- HUD Dashboard Cards -->
+    <div class="hud-grid">
+      <!-- Workout Split Card -->
+      <div class="bento-card hud-card">
+        <h3>Workout Routine (<span id="currentDay">Tue</span>)</h3>
+        <ul class="routine-list" id="routineList">
+          <li><span>Lat Pulldown</span> <strong>4 x 10</strong></li>
+          <li><span>Barbell Bent Rows</span> <strong>3 x 10</strong></li>
+          <li><span>Hammer Curls</span> <strong>4 x 12</strong></li>
+        </ul>
+      </div>
+
+      <!-- Hydration Counter -->
+      <div class="bento-card hud-card">
+        <h3>Daily Hydration Goal</h3>
+        <p class="subtext">Track intake glasses in real-time:</p>
+        <div class="counter-display">
+          <span id="waterCount">5</span> <small>/ 10 Glasses</small>
+        </div>
+        <div class="counter-controls">
+          <button class="counter-btn" id="removeGlass">- Glass</button>
+          <button class="counter-btn primary" id="addGlass">+ Glass</button>
+        </div>
+      </div>
+
+      <!-- Live BMI Calculator -->
+      <div class="bento-card hud-card">
+        <h3>Live BMI Metrics</h3>
+        <div class="bmi-inputs">
+          <input type="number" id="bmiWeight" placeholder="Weight (kg) e.g. 72">
+          <input type="number" id="bmiHeight" placeholder="Height (cm) e.g. 175">
+          <button class="btn-primary full-width" id="calcBmiBtn">Calculate Metric</button>
+        </div>
+        <div class="bmi-result" id="bmiResult">Enter details above</div>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

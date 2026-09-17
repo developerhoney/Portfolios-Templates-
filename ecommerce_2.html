@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    (function () {
+      var t = localStorage.getItem('devhoney-theme');
+      var d = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      document.documentElement.setAttribute('data-theme', t || (d ? 'dark' : 'light'));
+    })();
+  </script>
+  <title>AURA Minimal Goods | DEVHONEY</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="app-body">
+
+  <div class="cursor-dot"></div>
+  <div class="cursor-glow"></div>
+
+  <header class="app-header">
+    <div class="header-brand">
+      <a href="index.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Portfolio</a>
+      <h1>AURA Minimal Goods</h1>
+    </div>
+    <div class="cart-status">
+      Cart: <strong id="cartCount">0</strong> items ($<span id="cartTotal">0</span>)
+    </div>
+  </header>
+
+  <main class="app-container">
+    <div class="hud-grid">
+      <div class="bento-card product-card">
+        <div class="card-icon"><i class="fa-solid fa-shirt"></i></div>
+        <h3>Heavyweight Matte Tee</h3>
+        <p>100% organic combed cotton, relaxed fit.</p>
+        <span class="subtitle">$45.00</span>
+        <button class="btn-primary full-width add-to-cart" data-price="45">Add to Cart</button>
+      </div>
+
+      <div class="bento-card product-card">
+        <div class="card-icon"><i class="fa-solid fa-glasses"></i></div>
+        <h3>Architectural Frames</h3>
+        <p>Hand-crafted acetate optical eyewear.</p>
+        <span class="subtitle">$120.00</span>
+        <button class="btn-primary full-width add-to-cart" data-price="120">Add to Cart</button>
+      </div>
+
+      <div class="bento-card product-card">
+        <div class="card-icon"><i class="fa-solid fa-bottle-water"></i></div>
+        <h3>Thermal Flask 800ml</h3>
+        <p>Double-wall vacuum insulation matte finish.</p>
+        <span class="subtitle">$35.00</span>
+        <button class="btn-primary full-width add-to-cart" data-price="35">Add to Cart</button>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
